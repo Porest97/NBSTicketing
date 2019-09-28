@@ -1,0 +1,86 @@
+﻿@model NBSTicketing.Models.DataModels.Ticket
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TicketCreated" class="control-label"></label>
+                <input asp-for="TicketCreated" class="form-control" />
+                <span asp-validation-for="TicketCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketStartTime" class="control-label"></label>
+                <input asp-for="TicketStartTime" class="form-control" />
+                <span asp-validation-for="TicketStartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketEndTime" class="control-label"></label>
+                <input asp-for="TicketEndTime" class="form-control" />
+                <span asp-validation-for="TicketEndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label"></label>
+                <select asp-for="PersonId" class="form-control" asp-items="ViewBag.PersonId"></select>
+                <span asp-validation-for="PersonId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderId" class="control-label"></label>
+                <select asp-for="OrderId" class="form-control" asp-items="ViewBag.OrderId"></select>
+                <span asp-validation-for="OrderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId1" class="control-label"></label>
+                <select asp-for="PersonId1" class="form-control" asp-items="ViewBag.PersonId1"></select>
+                <span asp-validation-for="PersonId1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FESceduled" class="control-label"></label>
+                <input asp-for="FESceduled" class="form-control" />
+                <span asp-validation-for="FESceduled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FEOnSite" class="control-label"></label>
+                <input asp-for="FEOnSite" class="form-control" />
+                <span asp-validation-for="FEOnSite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FELeavingSite" class="control-label"></label>
+                <input asp-for="FELeavingSite" class="form-control" />
+                <span asp-validation-for="FELeavingSite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketTypeId" class="control-label"></label>
+                <select asp-for="TicketTypeId" class="form-control" asp-items="ViewBag.TicketTypeId"></select>
+                <span asp-validation-for="TicketTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketDescription" class="control-label"></label>
+                <input asp-for="TicketDescription" class="form-control" />
+                <span asp-validation-for="TicketDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketStatusId" class="control-label"></label>
+                <select asp-for="TicketStatusId" class="form-control" asp-items="ViewBag.TicketStatusId"></select>
+                <span asp-validation-for="TicketStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

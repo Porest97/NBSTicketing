@@ -1,0 +1,101 @@
+﻿@model IEnumerable<NBSTicketing.Models.DataModels.Ticket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketStartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketEndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedFE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FESceduled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FEOnSite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FELeavingSite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderBy.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedFE.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FESceduled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FEOnSite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FELeavingSite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketType.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketStatus.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

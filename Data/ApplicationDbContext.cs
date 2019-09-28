@@ -19,5 +19,12 @@ namespace NBSTicketing.Data
         public DbSet<NBSTicketing.Models.DataModels.PersonType> PersonType { get; set; }
         public DbSet<NBSTicketing.Models.DataModels.Site> Site { get; set; }
         public DbSet<NBSTicketing.Models.DataModels.SiteType> SiteType { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.Case> Case { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.Ticket> Ticket { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.TicketStatus> TicketStatus { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.TicketType> TicketType { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.Order> Order { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.OrderStatus> OrderStatus { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.OrderType> OrderType { get; set; }
     }
 }

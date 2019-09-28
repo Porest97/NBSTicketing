@@ -31,7 +31,7 @@ namespace NBSTicketing.Models.DataModels
         public string Country { get; set; }
 
         [Display(Name = "Address")]
-        public string CompanyAddress { get { return string.Format("{0} {1} {2}", StreetAddress, ZipCode, City); } }
+        public string SiteAddress { get { return string.Format("{0} {1} {2}", StreetAddress, ZipCode, City); } }
 
         [Display(Name = "CR Number")]
         public string CompanyRegNO { get; set; }
