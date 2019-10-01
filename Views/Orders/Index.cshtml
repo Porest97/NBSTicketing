@@ -43,16 +43,16 @@
                 @Html.DisplayFor(modelItem => item.OrderNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderBy.Id)
+                @Html.DisplayFor(modelItem => item.OrderBy.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderType.Id)
+                @Html.DisplayFor(modelItem => item.OrderType.OrderTypeName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderStatus.Id)
+                @Html.DisplayFor(modelItem => item.OrderStatus.OrderStatusName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

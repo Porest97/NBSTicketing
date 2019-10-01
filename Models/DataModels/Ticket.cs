@@ -69,7 +69,13 @@ namespace NBSTicketing.Models.DataModels
         [ForeignKey("TicketStatusId")]
         public TicketStatus TicketStatus { get; set; }
 
-      
+        //Location Prop!
+        [Display(Name = "Location")]
+        public int? SiteId { get; set; }
+        [Display(Name = "Location")]
+        [ForeignKey("SiteId")]
+        public Site Location { get; set; }
+
 
 
     }

@@ -1,0 +1,46 @@
+﻿@model NBSTicketing.Models.DataModels.Report
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Report</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ReportTypeId" class="control-label"></label>
+                <select asp-for="ReportTypeId" class="form-control" asp-items="ViewBag.ReportTypeId"></select>
+                <span asp-validation-for="ReportTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportStatusId" class="control-label"></label>
+                <select asp-for="ReportStatusId" class="form-control" asp-items="ViewBag.ReportStatusId"></select>
+                <span asp-validation-for="ReportStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportName" class="control-label"></label>
+                <input asp-for="ReportName" class="form-control" />
+                <span asp-validation-for="ReportName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportDescription" class="control-label"></label>
+                <input asp-for="ReportDescription" class="form-control" />
+                <span asp-validation-for="ReportDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

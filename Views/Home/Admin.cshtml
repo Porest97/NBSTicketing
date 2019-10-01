@@ -37,7 +37,7 @@
     </li>
 </ul>
 
-<h2>Tickets, Orders and Reports Management !</h2>
+<h2>Tickets and Orders Management !</h2>
 <ul class="navbar-nav flex-grow-1">
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="Index">Add, Edit, List, Tickets</a>
@@ -46,7 +46,7 @@
         <a class="nav-link text-dark" asp-area="" asp-controller="TicketTypes" asp-action="Index">Add, Edit, List, Ticket Types</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="TicketStatus" asp-action="Index">Add, Edit, List Tciket Status</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="TicketStatus" asp-action="Index">Add, Edit, List Ticket Status</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Add, Edit, List Orders</a>
@@ -58,13 +58,28 @@
         <a class="nav-link text-dark" asp-area="" asp-controller="OrderStatus" asp-action="Index">Add, Edit, List Order Status</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListCompanies">List All Companies</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListTickets">List All Tickets</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListPeople">List All People</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListOrders">List All Orders</a>
+    </li>
+
+</ul>
+<h2>Reports Management !</h2>
+<ul class="navbar-nav flex-grow-1">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Reports" asp-action="Index">Add, Edit, List, Reports</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListSites">List All Sites</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="ReportTypes" asp-action="Index">Add, Edit, List, Report Types</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="ReportStatus" asp-action="Index">Add, Edit, List Report Status</a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Lists" asp-action="ListReports">List All Reports</a>
+    </li>
+        
 </ul>

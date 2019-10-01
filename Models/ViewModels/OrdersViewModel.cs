@@ -1,16 +1,13 @@
 ﻿using NBSTicketing.Models.DataModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace NBSTicketing.Models.ViewModels
 {
-    public class CompaniesViewModel
+    public class OrdersViewModel
     {
-        public List<Company> Companies { get; internal set; }
-
+        public List<Order> Orders { get; internal set; }
     }
 }

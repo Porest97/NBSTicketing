@@ -58,12 +58,47 @@ namespace NBSTicketing.Controllers
             };
             return View(sitesViewModel);
         }
-        
-
-        public async Task<IActionResult> Companies()
+        public IActionResult ListTickets()
         {
-            var applicationDbContext = _context.Company.Include(c => c.CompanyType);
-            return View(await applicationDbContext.ToListAsync());
+            var ticketsViewModel = new TicketsViewModel
+            {
+               Tickets = _context.Ticket
+               .Include(t => t.TicketType)
+               .Include(t => t.TicketStatus)
+               .Include(t => t.AssignedFE)               
+               .Include(t => t.Order)
+               .Include(t => t.Location)
+               .ToList()
+
+            };
+            return View(ticketsViewModel);
         }
+        public IActionResult ListOrders()
+        {
+            var ordersViewModel = new OrdersViewModel
+            {
+                Orders = _context.Order
+               .Include(o => o.OrderType)
+               .Include(o => o.OrderBy)
+               .Include(o => o.OrderStatus)
+               .ToList()
+
+            };
+            return View(ordersViewModel);
+        }
+
+        public IActionResult ListReports()
+        {
+            var reportsViewModel = new ReportsViewModel
+            {
+                Reports = _context.Report
+               .Include(r => r.ReportType)
+               .Include(r => r.ReportStatus)
+               .ToList()
+
+            };
+            return View(reportsViewModel);
+        }
+
     }
 }

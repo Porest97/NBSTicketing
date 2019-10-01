@@ -59,9 +59,9 @@ namespace NBSTicketing.Models.DataModels
         [ForeignKey("IdentityUserId")]
         public IdentityUser IdentityUser { get; set; }
 
-        [Display(Name = "Person Type")]
+        [Display(Name = "Role")]
         public int? PersonTypeId { get; set; }
-        [Display(Name = "Person Type")]
+        [Display(Name = "Role")]
         [ForeignKey("PersonTypeId")]
         public PersonType PersonType { get; set; }
 

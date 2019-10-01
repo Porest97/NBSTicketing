@@ -10,77 +10,83 @@
     <h4>Ticket</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketCreated)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TicketCreated)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketStartTime)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TicketStartTime)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketEndTime)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TicketEndTime)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location.SiteName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderBy)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OrderBy.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderBy.FullName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Order)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Order.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.OrderNumber)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AssignedFE)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AssignedFE.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AssignedFE.FullName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FESceduled)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FESceduled)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FEOnSite)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FEOnSite)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FELeavingSite)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FELeavingSite)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketType)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TicketType.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TicketType.TicketTypeName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketDescription)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TicketDescription)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.TicketStatus)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TicketStatus.Id)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TicketStatus.TicketStatusName)
         </dd>
     </dl>
 </div>

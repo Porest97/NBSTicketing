@@ -8,6 +8,6 @@ namespace NBSTicketing.Models.ViewModels
 {
     public class SitesViewModel
     {
-        public List<Site> Sites { get; set; }
+        public List<Site> Sites { get; internal set; }
     }
 }

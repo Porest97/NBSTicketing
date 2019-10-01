@@ -26,5 +26,8 @@ namespace NBSTicketing.Data
         public DbSet<NBSTicketing.Models.DataModels.Order> Order { get; set; }
         public DbSet<NBSTicketing.Models.DataModels.OrderStatus> OrderStatus { get; set; }
         public DbSet<NBSTicketing.Models.DataModels.OrderType> OrderType { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.Report> Report { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.ReportStatus> ReportStatus { get; set; }
+        public DbSet<NBSTicketing.Models.DataModels.ReportType> ReportType { get; set; }
     }
 }

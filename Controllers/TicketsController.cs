@@ -27,7 +27,8 @@ namespace NBSTicketing.Controllers
                 .Include(t => t.Order)
                 .Include(t => t.OrderBy)
                 .Include(t => t.TicketStatus)
-                .Include(t => t.TicketType);
+                .Include(t => t.TicketType)
+                .Include(t => t.Location);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -45,6 +46,7 @@ namespace NBSTicketing.Controllers
                 .Include(t => t.OrderBy)
                 .Include(t => t.TicketStatus)
                 .Include(t => t.TicketType)
+                .Include(t => t.Location)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {
@@ -62,6 +64,7 @@ namespace NBSTicketing.Controllers
             ViewData["PersonId"] = new SelectList(_context.Person, "Id", "FullName");
             ViewData["TicketStatusId"] = new SelectList(_context.Set<TicketStatus>(), "Id", "TicketStatusName");
             ViewData["TicketTypeId"] = new SelectList(_context.Set<TicketType>(), "Id", "TicketTypeName");
+            ViewData["SiteId"] = new SelectList(_context.Set<Site>(), "Id", "SiteName");
             return View();
         }
 
@@ -70,7 +73,7 @@ namespace NBSTicketing.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TicketCreated,TicketStartTime,TicketEndTime,PersonId,OrderId,PersonId1,FESceduled,FEOnSite,FELeavingSite,TicketTypeId,TicketDescription,TicketStatusId")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,TicketCreated,TicketStartTime,TicketEndTime,PersonId,OrderId,PersonId1,FESceduled,FEOnSite,FELeavingSite,TicketTypeId,TicketDescription,TicketStatusId,SiteId")] Ticket ticket)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +86,7 @@ namespace NBSTicketing.Controllers
             ViewData["PersonId"] = new SelectList(_context.Person, "Id", "FullName", ticket.PersonId);
             ViewData["TicketStatusId"] = new SelectList(_context.Set<TicketStatus>(), "Id", "TicketStatusName", ticket.TicketStatusId);
             ViewData["TicketTypeId"] = new SelectList(_context.Set<TicketType>(), "Id", "TicketTypeName", ticket.TicketTypeId);
+            ViewData["SiteId"] = new SelectList(_context.Set<Site>(), "Id", "SiteName", ticket.SiteId);
             return View(ticket);
         }
 
@@ -104,6 +108,7 @@ namespace NBSTicketing.Controllers
             ViewData["PersonId"] = new SelectList(_context.Person, "Id", "FullName", ticket.PersonId);
             ViewData["TicketStatusId"] = new SelectList(_context.Set<TicketStatus>(), "Id", "TicketStatusName", ticket.TicketStatusId);
             ViewData["TicketTypeId"] = new SelectList(_context.Set<TicketType>(), "Id", "TicketTypeName", ticket.TicketTypeId);
+            ViewData["SiteId"] = new SelectList(_context.Set<Site>(), "Id", "SiteName", ticket.SiteId);
             return View(ticket);
         }
 
@@ -112,7 +117,7 @@ namespace NBSTicketing.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketCreated,TicketStartTime,TicketEndTime,PersonId,OrderId,PersonId1,FESceduled,FEOnSite,FELeavingSite,TicketTypeId,TicketDescription,TicketStatusId")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketCreated,TicketStartTime,TicketEndTime,PersonId,OrderId,PersonId1,FESceduled,FEOnSite,FELeavingSite,TicketTypeId,TicketDescription,TicketStatusId,SiteId")] Ticket ticket)
         {
             if (id != ticket.Id)
             {
@@ -144,6 +149,7 @@ namespace NBSTicketing.Controllers
             ViewData["PersonId"] = new SelectList(_context.Person, "Id", "FullName", ticket.PersonId);
             ViewData["TicketStatusId"] = new SelectList(_context.Set<TicketStatus>(), "Id", "TicketStatusName", ticket.TicketStatusId);
             ViewData["TicketTypeId"] = new SelectList(_context.Set<TicketType>(), "Id", "TicketTypeName", ticket.TicketTypeId);
+            ViewData["SiteId"] = new SelectList(_context.Set<Site>(), "Id", "SiteName", ticket.SiteId);
             return View(ticket);
         }
 
@@ -161,6 +167,7 @@ namespace NBSTicketing.Controllers
                 .Include(t => t.OrderBy)
                 .Include(t => t.TicketStatus)
                 .Include(t => t.TicketType)
+                .Include(t => t.Location)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ticket == null)
             {

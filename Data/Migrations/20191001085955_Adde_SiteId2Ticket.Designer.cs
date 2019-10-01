@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBSTicketing.Data;
 
 namespace NBSTicketing.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191001085955_Adde_SiteId2Ticket")]
+    partial class Adde_SiteId2Ticket
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -504,64 +506,6 @@ namespace NBSTicketing.Data.Migrations
                     b.ToTable("PersonType");
                 });
 
-            modelBuilder.Entity("NBSTicketing.Models.DataModels.Report", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ReportDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ReportName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ReportStatusId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ReportTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReportStatusId");
-
-                    b.HasIndex("ReportTypeId");
-
-                    b.ToTable("Report");
-                });
-
-            modelBuilder.Entity("NBSTicketing.Models.DataModels.ReportStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ReportStatusName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ReportStatus");
-                });
-
-            modelBuilder.Entity("NBSTicketing.Models.DataModels.ReportType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ReportTypeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ReportType");
-                });
-
             modelBuilder.Entity("NBSTicketing.Models.DataModels.Site", b =>
                 {
                     b.Property<int>("Id")
@@ -846,17 +790,6 @@ namespace NBSTicketing.Data.Migrations
                     b.HasOne("NBSTicketing.Models.DataModels.PersonType", "PersonType")
                         .WithMany()
                         .HasForeignKey("PersonTypeId");
-                });
-
-            modelBuilder.Entity("NBSTicketing.Models.DataModels.Report", b =>
-                {
-                    b.HasOne("NBSTicketing.Models.DataModels.ReportStatus", "ReportStatus")
-                        .WithMany()
-                        .HasForeignKey("ReportStatusId");
-
-                    b.HasOne("NBSTicketing.Models.DataModels.ReportType", "ReportType")
-                        .WithMany()
-                        .HasForeignKey("ReportTypeId");
                 });
 
             modelBuilder.Entity("NBSTicketing.Models.DataModels.Site", b =>

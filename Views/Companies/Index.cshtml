@@ -16,14 +16,9 @@
                 @Html.DisplayNameFor(model => model.CompanyName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StreetAddress)
+                @Html.DisplayNameFor(model => model.CompanyAddress)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ZipCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Country)
             </th>
@@ -31,14 +26,9 @@
                 @Html.DisplayNameFor(model => model.CompanyRegNO)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber1)
+                @Html.DisplayNameFor(model => model.PhoneNumbers)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber3)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.EmailAddress)
             </th>
@@ -55,14 +45,9 @@
                 @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StreetAddress)
+                @Html.DisplayFor(modelItem => item.CompanyAddress)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZipCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
@@ -70,19 +55,13 @@
                 @Html.DisplayFor(modelItem => item.CompanyRegNO)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber3)
-            </td>
+                @Html.DisplayFor(modelItem => item.PhoneNumbers)
+            </td>           
             <td>
                 @Html.DisplayFor(modelItem => item.EmailAddress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CompanyType.Id)
+                @Html.DisplayFor(modelItem => item.CompanyType.CompanyTypeName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
